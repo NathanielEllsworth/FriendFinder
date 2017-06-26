@@ -1,0 +1,29 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "name",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanielEllsworth/FriendFinder.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "nate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanielEllsworth/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/NathanielEllsworth/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "inquirer": "^3.1.1",
+    "path": "^0.12.7"
+  }
+}
