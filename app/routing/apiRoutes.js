@@ -10,15 +10,13 @@ var PORT = 8080;
 
 
 
-var home = path.join(__dirname, "../public/home.html");
-
-var survey = path.join(__dirname, "../public/survey.html");
+var friends = path.join(__dirname, "../data/friends.js");
 
 
 
 app.get("/api/friends", function(request, response) {
 
-    fs.readFile(home, "utf8", function (err, data) {
+    fs.readFile(friends, "utf8", function (err, data) {
         response.end(data);
     })
 
@@ -27,7 +25,7 @@ app.get("/api/friends", function(request, response) {
 
 app.post("/api/friends", function(request, response) {
 
-    fs.readFile(survey, "utf8", function (err, data) {
+    fs.readFile(friendsy, "utf8", function (err, data) {
         response.end(data);
     })
 
