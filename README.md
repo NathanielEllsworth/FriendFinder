@@ -6,6 +6,14 @@ In this activity, you'll build a compatibility-based "FriendFinder" application 
 
 You will use Express to handle routing. Make sure you deploy your app to Heroku so other users can fill it out.
 
+
+
+Dummy Database 
+![](/README_Images/Dummy_Database.png)
+
+HTML Routes
+![](/README_Images/HTML_Routes.png)
+
 ### Before You Begin
 
 

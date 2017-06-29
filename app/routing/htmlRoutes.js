@@ -2,6 +2,7 @@
 var fs = require("fs");
 var path = require("path");
 var express = require("express");
+var bodyParser = require("body-parser");
 
 
 var url = require("url");
@@ -14,25 +15,47 @@ var home = path.join(__dirname, "../public/home.html");
 
 var survey = path.join(__dirname, "../public/survey.html");
 
+var style = path.join(__dirname, "../public/style.css");
+
+var dataQ = path.join(__dirname, '../data/questions.js');
+
+//--------------------------------------------------------------
+
+
+
+
+
+
+
+var dataQ = path.join(__dirname, '../data/questions.js');
+
+
 
 // app.get("/");
 
 
-app.get("/", function(request, response) {
+app.get("/", function(req, res) {
 
-    fs.readFile(home, "utf8", function (err, data) {
-        response.end(data);
-    })
+    res.sendFile(home)
 
 });
 
-app.get("/survey", function(request, response) {
+app.get("/survey", function(req, res) {
 
-    fs.readFile(survey, "utf8", function (err, data) {
+    res.sendFile(survey)
+
+    /*fs.readFile(survey, "utf8", function (err, data) {
         response.end(data);
-    })
+    })*/
+});
+
+
+app.get("/style.css", function(req, res) {
+
+    res.sendFile(style);
 
 });
+
 
 //responce fs.typeWrite(
 
@@ -40,3 +63,21 @@ app.get("/survey", function(request, response) {
 app.listen(PORT, function () {
    console.log("Server is listening on:" + PORT)
 });
+
+
+
+
+
+
+
+
+
+
+
+//app.use(express.static('../data'));
+
+
+
+
+
+

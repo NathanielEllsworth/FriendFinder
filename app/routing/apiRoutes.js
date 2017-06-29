@@ -37,3 +37,39 @@ app.post("/api/friends", function(request, response) {
 app.listen(PORT, function () {
     console.log("Server is listening on:" + PORT)
 });
+
+
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.text());
+app.use(bodyParser.json({type: "application/vnd.api+json"}));
+
+
+app.post("/contact", function(req, res) {
+    console.log('request body', req.body);
+    //TODO how do I get the name?
+    let name = req.body.myName; //the person who typed it
+    //TODO how do I get the email?
+    let email = req.body.myEmail;
+
+    //TODO remove me after fixing the above
+    // return res.end(`Raw data: ${JSON.stringify(req.body)}`);
+
+    //TODO enable this after grabbing the variables from the POST(man) ;-)
+    res.end(`<!DOCTYPE html><html><head><title>Contact Form</title> </head><body>
+     Your name: ${name} <br/> 
+     Your email: ${email} <br/> 
+     
+    </body></html>`)
+});
+// =============================================================
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+});
